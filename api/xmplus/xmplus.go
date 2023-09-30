@@ -162,10 +162,11 @@ func (c *APIClient) GetNodeInfo() (nodeInfo *api.NodeInfo, err error) {
 	
 	c.resp.Store(server)
 	
-	version := c.resp.Load().(*serverConfig).version
-	if(version < "v20231001"){
-		return nil, errors.New("Update your XMPlus v2 panel to latest version")
-	}
+	//version := c.resp.Load().(*serverConfig).version
+	
+	//if(version < "20231001"){
+	//	return nil, errors.New("Update your XMPlus v2 panel to latest version %s or later", version)
+	//}
 	
 	nodeInfo, err = c.parseNodeResponse(server)
 	if err != nil {
